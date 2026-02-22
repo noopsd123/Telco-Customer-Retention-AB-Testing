@@ -70,7 +70,7 @@ $$\text{Uplift} = P(\text{Stay} | T=1) - P(\text{Stay} | T=0)$$
 
 ## 📂 Repository Structure
 * `telco_uplift_dataset.csv`: The cleaned 100k record master dataset.
-* `Customer_Retention.ipynb`: The end-to-end Python & SQL pipeline.
+* `Telco_Customer_Retention.ipynb`: The end-to-end Python & SQL pipeline.
 * `Customer Retention & Incremental Lift Optimizer.pbix`: The Power BI Strategic Suite.
 * `Telco_Dataset.csv`: Final scored dataset used for the visualization.
 

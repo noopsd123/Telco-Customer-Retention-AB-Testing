@@ -8,8 +8,6 @@ Standard churn models are mathematically inefficient because they target everyon
 
 This project implements **Causal AI (Uplift Modeling)** to solve this paradox. By analyzing the results of a **20% Retention Discount Experiment**, I identified the **"Persuadable"** segment—the only group where a marketing intervention actually drives incremental revenue—uncovering a **$1.22M revenue recovery opportunity**.
 
-
-
 ---
 
 ## 🏗 Domain & Dataset Architecture
@@ -34,44 +32,39 @@ This project simulates a **Randomized Controlled Trial (RCT)**:
 
 ---
 
-## 📊 Strategic Dashboard & Stakeholder Recommendations
+## 📊 Strategic Dashboard & Features
 **[🔗 View the Power BI Dashboard Here](https://app.powerbi.com/view?r=eyJrIjoiM2U0ZWFkYWEtYWQxZi00NTNmLWE0Y2UtMGFiZDk5MTc4ZGNmIiwidCI6IjExMTNiZTM0LWFlZDEtNGQwMC1hYjRiLWNkZDAyNTEwYmU5MSIsImMiOjN9)**
 
 The Power BI Strategic Suite serves as the "Control Center" for the Marketing and Customer Success teams. It translates complex Causal AI outputs into three actionable views:
 
-### 1. The Executive ROI Tracker (CFO/VP Level)
-* **Feature:** Financial modeling of the $1.22M potential recovery.
-* **Recommendation:** Shift the budget focus from "High-Risk Churn" to "High-Lift Persuadables." This allows for a **30% reduction in marketing spend** while maintaining identical retention KPIs.
+* **Executive ROI Tracker:** Financial modeling of the $1.22M potential recovery for C-Suite alignment.
+* **Segment Deep Dive:** Analysis of uplift by contract type and internet service to identify high-elasticity cohorts.
+* **Operational Call List:** A dynamic, filterable table for Customer Success teams to prioritize high-uplift leads.
 
-### 2. The Segment Deep Dive (Marketing Ops Level)
-* **Feature:** Breakdown of uplift by contract type and internet service.
-* **Recommendation:** Focus 72% of retention campaign resources on **Fiber Optic customers on Month-to-Month contracts**. This group has the highest sensitivity to the 20% discount offer.
-
-### 3. The Operational Call List (Customer Success Level)
-* **Feature:** A dynamic, filterable table of customers ranked by their **Uplift Score**.
-* **Recommendation:** CS agents should ignore "Lost Causes" (who consume high resource time with no retention ROI) and prioritize outreach to customers with an Uplift Score > 0.15.
+### 💡 Stakeholder Recommendations
+* **Surgical Targeting:** Prioritize all retention outreach and budget for **Month-to-Month Fiber Optic** users (the highest uplift group).
+* **Cost Avoidance:** Immediately cease retention discounts for "Lost Causes" (high charge velocity/bill shock users) to save overhead.
+* **Margin Protection:** Do not offer discounts to "Sure Things" (long-term contract holders); they stay regardless of incentives.
+* **Operational Shift:** Transition the Customer Success team from a "Churn Risk" list to the **"Uplift Priority"** list to maximize ROI per call.
 
 ---
 
 ## 🛠 Tech Stack & Methodology
 
-This project utilizes a Causal Inference framework to transition from predictive churn modeling to prescriptive retention strategy.
-
 ### 1. Causal Inference & Uplift Modeling (Python/Scikit-Learn)
 * **S-Learner Framework:** Implemented a Single-Learner (S-Learner) architecture using a **Random Forest Classifier**. By treating the retention offer as a binary feature (`is_treatment`), the model estimates the **Individual Treatment Effect (ITE)**.
 * **Uplift Scoring:** Derived the uplift score by calculating the difference between the probability of staying when treated vs. the probability of staying in the control group:
 $$\text{Uplift} = P(\text{Stay} | T=1) - P(\text{Stay} | T=0)$$
-* **Behavioral Segmentation:** Automated decile-based categorization to isolate **'Persuadables'** from 'Sure Things' and 'Lost Causes,' mitigating marketing cannibalization.
+* **Behavioral Segmentation:** Automated decile-based categorization to isolate **'Persuadables'** from 'Sure Things' and 'Lost Causes.'
 
-### 2. Data Engineering Pipeline (Data Architecture & SQL)
-* **Simulation at Scale:** Upsampled raw data to **100,000 records** to simulate production-level variance and ensure statistical significance in causal effects.
-* **Feature Engineering:** Developed custom metrics including **Charge Velocity** (spend intensity) and engineered categorical features via One-Hot Encoding while maintaining data lineage through unique `customerID` hashes.
-* **Validation:** Utilized a 20% holdout set to ensure the model generalizes to unseen data, preventing overfitting in the ROI projections.
+### 2. Data Engineering Pipeline (SQL)
+* **Simulation at Scale:** Upsampled raw data to **100,000 records** to simulate production-level variance.
+* **Feature Engineering:** Developed custom metrics including **Charge Velocity** and engineered categorical features via One-Hot Encoding.
+* **Validation:** Utilized a 20% holdout set to ensure the model generalizes to unseen data.
 
 ### 3. Prescriptive Analytics (Power BI, DAX)
-* **DAX Intelligence:** Developed complex measures using **iterator functions (`SUMX`)** to calculate annualized revenue impact at the individual customer level.
-* **Visual Strategy:** Built a high-signal, minimalist UI focusing on **Behavioral Matrixes** and **Gains Charts** to identify high-elasticity cohorts.
-* **Operational Execution:** Integrated a dynamic **Priority Call List** to bridge the gap between model inference and Customer Success outreach.
+* **DAX Intelligence:** Developed complex measures using **iterator functions (`SUMX`)** to calculate annualized revenue impact.
+* **Visual Strategy:** Built a high-signal UI focusing on **Behavioral Matrixes** and **Gains Charts**.
 
 ---
 

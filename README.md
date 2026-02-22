@@ -9,12 +9,15 @@ Standard churn models are mathematically inefficient because they target everyon
 This project implements **Causal AI (Uplift Modeling)** to solve this paradox. By analyzing the results of a **20% Retention Discount Experiment**, I identified the **"Persuadable"** segment—the only group where a marketing intervention actually drives incremental revenue—uncovering a **$1.22M revenue recovery opportunity**.
 
 
-## 🏗 Domain & Dataset Architecture
-* **Industry Domain:** Telecommunications (Subscription-based Subscription Model).
-* **Dataset Source:** Derived from the **IBM Sample Data (Telco Customer Churn)** via [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn), representing a home phone and internet services provider in California.
-* **Project Scope:** While the original dataset is a static set of ~7k records, this project **upsampled the data to 100,000 records** to simulate enterprise-scale messy data. 
+
 ---
 
+## 🏗 Domain & Dataset Architecture
+* **Industry Domain:** Telecommunications (Subscription-based Business Model).
+* **Dataset Source:** Derived from the **IBM Sample Data (Telco Customer Churn)** via [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn), representing a home phone and internet services provider in California.
+* **Project Scope:** While the original dataset is a static set of ~7k records, this project **upsampled the data to 100,000 records** to simulate enterprise-scale messy data. 
+
+---
 
 ## 🚀 Key Business Impacts
 * **Incremental Revenue Recovery:** Identified **$1.22M in Annual Recurring Revenue** by shifting to "Lift-based" targeting.
@@ -32,7 +35,7 @@ This project simulates a **Randomized Controlled Trial (RCT)**:
 ---
 
 ## 📊 Strategic Dashboard & Stakeholder Recommendations
-**[🔗 View the Power BI Dashboard Here]((https://app.powerbi.com/view?r=eyJrIjoiM2U0ZWFkYWEtYWQxZi00NTNmLWE0Y2UtMGFiZDk5MTc4ZGNmIiwidCI6IjExMTNiZTM0LWFlZDEtNGQwMC1hYjRiLWNkZDAyNTEwYmU5MSIsImMiOjN9))**
+**[🔗 View the Power BI Dashboard Here](https://app.powerbi.com/view?r=eyJrIjoiM2U0ZWFkYWEtYWQxZi00NTNmLWE0Y2UtMGFiZDk5MTc4ZGNmIiwidCI6IjExMTNiZTM0LWFlZDEtNGQwMC1hYjRiLWNkZDAyNTEwYmU5MSIsImMiOjN9)**
 
 The Power BI Strategic Suite serves as the "Control Center" for the Marketing and Customer Success teams. It translates complex Causal AI outputs into three actionable views:
 
@@ -56,8 +59,8 @@ This project utilizes a Causal Inference framework to transition from predictive
 
 ### 1. Causal Inference & Uplift Modeling (Python/Scikit-Learn)
 * **S-Learner Framework:** Implemented a Single-Learner (S-Learner) architecture using a **Random Forest Classifier**. By treating the retention offer as a binary feature (`is_treatment`), the model estimates the **Individual Treatment Effect (ITE)**.
-* **Uplift Scoring:** Derived the uplift score by calculating the difference between the probability of staying when treated vs. the probability of staying in the control group:  
-  $$\text{Uplift} = P(\text{Stay} | T=1) - P(\text{Stay} | T=0)$$
+* **Uplift Scoring:** Derived the uplift score by calculating the difference between the probability of staying when treated vs. the probability of staying in the control group:
+$$\text{Uplift} = P(\text{Stay} | T=1) - P(\text{Stay} | T=0)$$
 * **Behavioral Segmentation:** Automated decile-based categorization to isolate **'Persuadables'** from 'Sure Things' and 'Lost Causes,' mitigating marketing cannibalization.
 
 ### 2. Data Engineering Pipeline (Data Architecture & SQL)
@@ -77,7 +80,8 @@ This project utilizes a Causal Inference framework to transition from predictive
 * `Customer_Retention.ipynb`: The end-to-end Python & SQL pipeline.
 * `Customer Retention & Incremental Lift Optimizer.pbix`: The Power BI Strategic Suite.
 * `Telco_Dataset.csv`: Final scored dataset used for the visualization.
+
 ---
 
 ## 👤 Contact
-**Noopur Shekhar Divekar** | [[LinkedIn Profile Link](https://www.linkedin.com/in/noopurd/)] | [Email Address](noopur.div188@gmail.com)
+**Noopur Shekhar Divekar** | [LinkedIn Profile](https://www.linkedin.com/in/noopurd/) | [Email](mailto:noopur.div188@gmail.com)

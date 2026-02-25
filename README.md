@@ -50,8 +50,8 @@ The Power BI Strategic Suite serves as the "Control Center" for the Marketing an
 ---
 
 ## 🛠 Tech Stack & Methodology
-<img width="1408" height="768" alt="Gemini_Generated_Image_qc4imzqc4imzqc4i (1)" src="https://github.com/user-attachments/assets/1aa5abe0-4649-4584-a349-6743d4dc2cbc" />
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/135fb926-5ea3-417e-8228-a7008e9d0ecf" />
 
 
 ### 1. Causal Inference & Uplift Modeling (Python/Scikit-Learn)

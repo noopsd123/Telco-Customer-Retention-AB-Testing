@@ -50,6 +50,7 @@ The Power BI Strategic Suite serves as the "Control Center" for the Marketing an
 ---
 
 ## 🛠 Tech Stack & Methodology
+<img width="1408" height="768" alt="Gemini_Generated_Image_qc4imzqc4imzqc4i" src="https://github.com/user-attachments/assets/d8e39f7c-536e-428f-966b-5bf2809b1623" />
 
 ### 1. Causal Inference & Uplift Modeling (Python/Scikit-Learn)
 * **S-Learner Framework:** Implemented a Single-Learner (S-Learner) architecture using a **Random Forest Classifier**. By treating the retention offer as a binary feature (`is_treatment`), the model estimates the **Individual Treatment Effect (ITE)**.
